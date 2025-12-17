@@ -43,16 +43,17 @@
                     <li class="nav-item">
                         <a class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'contact.php' ? 'active' : ''; ?>" href="contact.php">Contact</a>
                     </li>
-                    <?php if (isset($_SESSION['user_id'])): ?>
-                        <li class="nav-item">
-                            <a class="nav-link" href="logout.php">Logout</a>
-                        </li>
-                    <?php else: ?>
-                        <li class="nav-item">
-                            <a class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'login.php' ? 'active' : ''; ?>" href="login.php">Login</a>
-                        </li>
+                    <?php// if (isset($_SESSION['user_id'])): ?>
+                        <li// class="nav-item">
+                            <a //class="nav-link" href="logout.php">Logout</a>
+                       <///li>
+                    <?//php else: ?>
+                        <//li class="nav-item">
+                            <//a class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'login.php' ? 'active' : ''; ?>" href="login.php">Login</a>
+                        <///li>
                     <?php endif; ?>
                 </ul>
             </div>
         </div>
+
     </nav>
