@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Table - Bella Vista Restaurant</title>
+    
+    <!-- Bootstrap 5.3.8 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <i class="fas fa-utensils me-2 text-warning"></i>
+                <span class="fw-bold fs-4">Bella Vista</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="menu.html">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="book_table.html">Book Table</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="bg-dark text-white py-5">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold">Reserve a Table</h1>
+            <p class="lead">Book your dining experience</p>
+        </div>
+    </div>
+
+    <!-- Booking Form -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div id="successMessage" class="alert alert-success d-none">
+                        Your table has been booked successfully! We will confirm your reservation shortly.
+                    </div>
+                    
+                    <div class="card border-0 shadow">
+                        <div class="card-body p-5">
+                            <form id="bookingForm">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label">Full Name *</label>
+                                        <input type="text" name="name" class="form-control" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Email *</label>
+                                        <input type="email" name="email" class="form-control" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Phone Number *</label>
+                                        <input type="tel" name="phone" class="form-control" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Number of Guests *</label>
+                                        <select name="guests" class="form-select" required>
+                                            <option value="">Select guests</option>
+                                            <option value="1">1 Guest</option>
+                                            <option value="2">2 Guests</option>
+                                            <option value="3">3 Guests</option>
+                                            <option value="4">4 Guests</option>
+                                            <option value="5">5 Guests</option>
+                                            <option value="6">6 Guests</option>
+                                            <option value="7">7 Guests</option>
+                                            <option value="8">8 Guests</option>
+                                            <option value="9">9 Guests</option>
+                                            <option value="10">10 Guests</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Date *</label>
+                                        <input type="date" name="date" class="form-control" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Time *</label>
+                                        <input type="time" name="time" class="form-control" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label">Special Requests</label>
+                                        <textarea name="special_requests" class="form-control" rows="3" placeholder="Any dietary restrictions, special occasions, or other requests..."></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-warning w-100 py-3">
+                                            <i class="fas fa-calendar-check me-2"></i>Reserve Table
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5 mt-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="fas fa-utensils me-2 text-warning fs-3"></i>
+                        <h4 class="mb-0">Bella Vista</h4>
+                    </div>
+                    <p class="text-white-50">Experience authentic Italian cuisine in a warm and welcoming atmosphere.</p>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="text-warning mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white-50 text-decoration-none">Home</a></li>
+                        <li><a href="menu.html" class="text-white-50 text-decoration-none">Menu</a></li>
+                        <li><a href="book_table.html" class="text-white-50 text-decoration-none">Book Table</a></li>
+                        <li><a href="contact.html" class="text-white-50 text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="text-warning mb-3">Contact Info</h5>
+                    <p class="text-white-50">
+                        <i class="fas fa-map-marker-alt me-2"></i>123 Culinary Street, Food City<br>
+                        <i class="fas fa-phone me-2"></i>+1 (555) 123-4567<br>
+                        <i class="fas fa-envelope me-2"></i>info@bellavista.com
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="text-white-50 me-3"><i class="fab fa-facebook fs-5"></i></a>
+                        <a href="#" class="text-white-50 me-3"><i class="fab fa-instagram fs-5"></i></a>
+                        <a href="#" class="text-white-50"><i class="fab fa-twitter fs-5"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-secondary my-4">
+            <div class="text-center text-white-50">
+                <p class="mb-0">&copy; 2024 Bella Vista Restaurant. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="assets/js/script.js"></script>
+    
+    <script>
+        // Set minimum date to today
+        document.addEventListener('DOMContentLoaded', function() {
+            const dateInput = document.querySelector('input[name="date"]');
+            const today = new Date().toISOString().split('T')[0];
+            dateInput.setAttribute('min', today);
+        });
+
+        // Booking form handling
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success message
+            document.getElementById('successMessage').classList.remove('d-none');
+            
+            // Reset form
+            this.reset();
+            
+            // Scroll to success message
+            document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
