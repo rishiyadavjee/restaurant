@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Bella Vista Restaurant</title>
     
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
     <!-- Bootstrap 5.3.8 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
@@ -98,6 +101,9 @@
                 <div class="col-lg-6">
                     <div id="successMessage" class="alert alert-success d-none">
                         Thank you for your message! We will get back to you soon.
+                    </div>
+                    <div id="errorMessage" class="alert alert-danger d-none">
+                        Sorry, there was an error sending your message. Please try again later.
                     </div>
                     
                     <div class="card border-0 shadow h-100">
@@ -211,18 +217,65 @@
     <script src="assets/js/script.js"></script>
     
     <script>
-        // Contact form handling
+        // Initialize EmailJS
+        (function(){
+            emailjs.init("public-key"); // Replace with your EmailJS public key
+        })();
+
+        // Contact form handling with EmailJS
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Show success message
-            document.getElementById('successMessage').classList.remove('d-none');
+            const submitButton = this.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.innerHTML;
             
-            // Reset form
-            this.reset();
+            // Show loading state
+            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Sending...';
+            submitButton.disabled = true;
             
-            // Scroll to success message
-            document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
+            // Hide previous messages
+            document.getElementById('successMessage').classList.add('d-none');
+            document.getElementById('errorMessage').classList.add('d-none');
+            
+            // Get form data
+            const templateParams = {
+                from_name: this.name.value,
+                from_email: this.email.value,
+                subject: this.subject.value,
+                message: this.message.value,
+                to_email: 'testyadav1002@gmail.com'
+            };
+            
+            // Send email using EmailJS
+            emailjs.send('change-service-id', 'change-template', templateParams)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    
+                    // Show success message
+                    document.getElementById('successMessage').classList.remove('d-none');
+                    document.getElementById('successMessage').textContent = 'Thank you for your message! We will get back to you soon.';
+                    
+                    // Reset form
+                    document.getElementById('contactForm').reset();
+                    
+                    // Scroll to success message
+                    document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
+                    
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    
+                    // Show error message
+                    document.getElementById('errorMessage').classList.remove('d-none');
+                    document.getElementById('errorMessage').textContent = 'Sorry, there was an error sending your message. Please try again later.';
+                    
+                    // Scroll to error message
+                    document.getElementById('errorMessage').scrollIntoView({ behavior: 'smooth' });
+                })
+                .finally(function() {
+                    // Restore button state
+                    submitButton.innerHTML = originalButtonText;
+                    submitButton.disabled = false;
+                });
         });
     </script>
 </body>
