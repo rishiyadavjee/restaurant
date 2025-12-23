@@ -68,7 +68,7 @@
                         <div class="card-body p-4">
                             <i class="fas fa-phone text-warning mb-3" style="font-size: 2.5rem;"></i>
                             <h5>Phone</h5>
-                            <p class="text-muted">+1 (555) 123-4567</p>
+                            <p class="text-muted">+91 9737345032</p>
                         </div>
                     </div>
                 </div>
@@ -92,15 +92,16 @@
                 </div>
             </div>
 
-            <!-- Contact Form -->
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
+            <!-- Contact Form and Map -->
+            <div class="row g-4">
+                <!-- Contact Form -->
+                <div class="col-lg-6">
                     <div id="successMessage" class="alert alert-success d-none">
                         Thank you for your message! We will get back to you soon.
                     </div>
                     
-                    <div class="card border-0 shadow">
-                        <div class="card-body p-5">
+                    <div class="card border-0 shadow h-100">
+                        <div class="card-body p-4">
                             <h3 class="mb-4">Send us a Message</h3>
                             <form id="contactForm">
                                 <div class="row g-3">
@@ -118,7 +119,7 @@
                                     </div>
                                     <div class="col-12">
                                         <label class="form-label">Message *</label>
-                                        <textarea name="message" class="form-control" rows="5" required></textarea>
+                                        <textarea name="message" class="form-control" rows="4" required></textarea>
                                     </div>
                                     <div class="col-12">
                                         <button type="submit" class="btn btn-warning w-100 py-3">
@@ -127,6 +128,34 @@
                                     </div>
                                 </div>
                             </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Maps -->
+                <div class="col-lg-6">
+                    <div class="card border-0 shadow h-100">
+                        <div class="card-body p-4">
+                            <h3 class="mb-4">Find Us Here</h3>
+                            <div class="ratio ratio-4x3">
+                                <iframe 
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.245427923342!2d72.56841907251282!3d23.014759170626053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e85ab8775e895%3A0xf81476bebcbd957!2sSabarmati%20Riverfront%20Event%20Centre!5e0!3m2!1sen!2sin!4v1766470200844!5m2!1sen!2sin" 
+                                    style="border:0;" 
+                                    allowfullscreen="" 
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade"
+                                    class="rounded">
+                                </iframe>
+                            </div>
+                            <div class="mt-3">
+                                <p class="text-muted mb-1">
+                                    <i class="fas fa-map-marker-alt text-warning me-2"></i>
+                                    <strong>Sabarmati Riverfront Event Centre</strong>
+                                </p>
+                                <p class="text-muted small">
+                                    Visit us at this beautiful location for an unforgettable dining experience.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
